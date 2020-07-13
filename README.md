@@ -1,0 +1,1 @@
+# Laravel Searcher Package
