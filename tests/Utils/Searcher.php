@@ -37,9 +37,33 @@ class Searcher extends Searcheable
         return $this;
     }
 
-    public function historyEqualsTo(string $q)
+    public function onlyWithAccount(): self
+    {
+        $this->has('account');
+        return $this;
+    }
+
+    public function onlyObserved(): self
+    {
+        $this->isNotNull('observation');
+        return $this;
+    }
+
+    public function withoutObservation(): self
+    {
+        $this->isNull('observation');
+        return $this;
+    }
+
+    public function historyEqualsTo(string $q): self
     {
         $this->equals($q, 'history');
+        return $this;
+    }
+
+    public function documentNotEqualsTo(string $q): self
+    {
+        $this->notEquals($q, 'document');
         return $this;
     }
 

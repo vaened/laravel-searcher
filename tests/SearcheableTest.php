@@ -64,10 +64,34 @@ class SearcheableTest extends DataBaseTestCase
         $this->assertCount(1, $result->get());
     }
 
+    public function test_search_different_document(): void
+    {
+        $result = $this->searcher()->documentNotEqualsTo('87654321');
+        $this->assertCount(2, $result->get());
+    }
+
     public function test_search_in_documents(): void
     {
         $result = $this->searcher()->inDocuments(['87654321', '12345678']);
         $this->assertCount(2, $result->get());
+    }
+
+    public function test_search_only_observed(): void
+    {
+        $result = $this->searcher()->onlyObserved();
+        $this->assertCount(3, $result->get());
+    }
+
+    public function test_search_without_observation(): void
+    {
+        $result = $this->searcher()->withoutObservation();
+        $this->assertCount(0, $result->get());
+    }
+
+    public function test_search_only_with_account(): void
+    {
+        $result = $this->searcher()->onlyWithAccount();
+        $this->assertCount(1, $result->get());
     }
 
     public function test_limit_search(): void
