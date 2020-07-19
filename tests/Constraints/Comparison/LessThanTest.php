@@ -3,7 +3,7 @@
  * Created by enea dhack - 19/07/2020 14:18.
  */
 
-namespace Vaened\Searcher\Tests\Constraints\Comparision;
+namespace Vaened\Searcher\Tests\Constraints\Comparison;
 
 use Vaened\Searcher\Constraint;
 use Vaened\Searcher\Constraints\Comparison;

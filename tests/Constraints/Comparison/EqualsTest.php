@@ -1,24 +1,24 @@
 <?php
 /**
- * Created by enea dhack - 19/07/2020 14:21.
+ * Created by enea dhack - 19/06/2020 20:39.
  */
 
-namespace Vaened\Searcher\Tests\Constraints\Comparision;
+namespace Vaened\Searcher\Tests\Constraints\Comparison;
 
 use Vaened\Searcher\Constraint;
 use Vaened\Searcher\Constraints\Comparison;
 use Vaened\Searcher\Keywords\Operator;
 use Vaened\Searcher\Tests\Constraints\ConstraintTestCase;
 
-class LessThanOrEqualTest extends ConstraintTestCase
+class EqualsTest extends ConstraintTestCase
 {
     protected function constraint(): Constraint
     {
-        return new Comparison('00000002', Operator::LESS_THAN_OR_EQUAL_TO(), 'history');
+        return new Comparison('00000003', Operator::EQUAL(), 'history');
     }
 
     protected function getExpectedResult(): array
     {
-        return ['00000001', '00000002'];
+        return ['00000003'];
     }
 }
