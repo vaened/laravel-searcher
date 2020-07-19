@@ -79,14 +79,14 @@ abstract class Searcheable extends Queryable
         $this->apply(new Between($range, $column));
     }
 
-    protected function through(string $relation, Constraint $constraint): void
-    {
-        $this->has($relation, $constraint);
-    }
-
     protected function has(string $relation, Constraint $constraint = null): void
     {
         $this->apply(new Has($relation, $constraint));
+    }
+
+    protected function through(string $relation, Constraint $constraint): void
+    {
+        $this->has($relation, $constraint);
     }
 
     protected function statement(): Builder

@@ -49,14 +49,14 @@ class Searcher extends Searcheable
         return $this;
     }
 
-    protected function getIndexProvider(): Indexable
-    {
-        return $this->index;
-    }
-
     public function loadAccounts(): self
     {
         return $this->with(['account']);
+    }
+
+    protected function getIndexProvider(): Indexable
+    {
+        return $this->index;
     }
 
     protected function getFilterProvider(): Filterable
