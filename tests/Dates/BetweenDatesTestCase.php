@@ -70,6 +70,6 @@ abstract class BetweenDatesTestCase extends TestCase
 
     protected function getDateFormat(): string
     {
-        return Format::PRESENTATION_DATETIME;
+        return Format::YMD_HIS;
     }
 }

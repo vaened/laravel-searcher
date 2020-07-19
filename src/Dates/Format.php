@@ -5,6 +5,7 @@
 
 namespace Vaened\Searcher\Dates;
 
+use Carbon\Carbon;
 use Vaened\Enum\Enum;
 
 /**
@@ -13,30 +14,35 @@ use Vaened\Enum\Enum;
  * @package Components\Dates
  * @author enea dhack <enea.so@live.com>
  *
- * @method static Format DMY()
  * @method static Format YMD()
- * @method static Format SYSTEM_DATETIME()
- * @method static Format PRESENTATION_DATETIME()
- * @method static Format SYSTEM_DATE()
- * @method static Format PRESENTATION_DATE()
- * @method static Format SYSTEM_TIME()
- * @method static Format PRESENTATION_TIME()
+ * @method static Format YMD_HIS()
+ * @method static Format YMD_HIA()
+ * @method static Format DMY()
+ * @method static Format DMY_HIS()
+ * @method static Format DMY_HIA()
+ * @method static Format HIS()
+ * @method static Format HIA()
  */
 class Format extends Enum
 {
-    public const DMY = 'd-m-Y';
-
     public const YMD = 'Y-m-d';
 
-    public const  SYSTEM_DATETIME = 'Y-m-d H:i:s';
+    public const YMD_HIS = 'Y-m-d H:i:s';
 
-    public const PRESENTATION_DATETIME = 'd-m-Y h:i A';
+    public const YMD_HIA = 'Y-m-d H:i A';
 
-    public const  SYSTEM_DATE = self::YMD;
+    public const DMY = 'd-m-Y';
 
-    public const PRESENTATION_DATE = self::DMY;
+    public const DMY_HIS = 'd-m-Y H:i:s';
 
-    public const SYSTEM_TIME = 'H:i:s';
+    public const DMY_HIA = 'd-m-Y H:i A';
 
-    public const PRESENTATION_TIME = 'h:i A';
+    public const HIS = 'H:i:s';
+
+    public const HIA = 'H:i A';
+
+    public function apply(Carbon $date): string
+    {
+        return $date->format($this->value());
+    }
 }

@@ -17,17 +17,17 @@ abstract class Dateable implements BetweenDatesContract
 
     public function getFormattedStartDate(): string
     {
-        return $this->getStartDate()->format($this->getDateFormat()->value());
+        return $this->getDateFormat()->apply($this->getStartDate());
     }
 
     public function getFormattedEndDate(): string
     {
-        return $this->getEndDate()->format($this->getDateFormat()->value());
+        return $this->getDateFormat()->apply($this->getEndDate());
     }
 
     protected function getDateFormat(): Format
     {
-        return Format::PRESENTATION_DATETIME();
+        return Format::YMD_HIS();
     }
 
     public function toArray()
