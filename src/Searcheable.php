@@ -7,7 +7,8 @@ namespace Vaened\Searcher;
 
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\{Builder, Collection};
-use Vaened\Searcher\Constraints\{Between, Equals, Has, In, IsNotNull, IsNull, Like, Limit, OrderBy};
+use Vaened\Searcher\Constraints\{Between, Comparison, Has, In, IsNotNull, IsNull, Like, Limit, OrderBy};
+use Vaened\Searcher\Keywords\Operator;
 
 abstract class Searcheable extends Queryable
 {
@@ -49,14 +50,24 @@ abstract class Searcheable extends Queryable
         return $this;
     }
 
+    protected function comparision($value, Operator $operator, string $column): void
+    {
+        $this->apply(new Comparison($value, $operator, $column));
+    }
+
     protected function in(array $values, string $column): void
     {
         $this->apply(new In($values, $column));
     }
 
-    protected function equals(?string $value, string $column): void
+    protected function equals(string $value, string $column): void
     {
-        $this->apply(new Equals($value, $column));
+        $this->comparision($value, Operator::EQUAL(), $column);
+    }
+
+    protected function notEquals(string $value, string $column)
+    {
+        $this->comparision($value, Operator::NOT_EQUAL(), $column);
     }
 
     protected function isNotNull(string $column): void
