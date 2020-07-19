@@ -9,11 +9,10 @@ use Carbon\Carbon;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
 use JsonSerializable;
+use Vaened\Searcher\Rangeable;
 
-interface BetweenDatesContract extends JsonSerializable, Arrayable, Jsonable
+interface BetweenDatesContract extends Rangeable, JsonSerializable, Arrayable, Jsonable
 {
-    public function getRange(): array;
-
     public function getStartDate(): Carbon;
 
     public function getEndDate(): Carbon;

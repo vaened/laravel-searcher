@@ -9,15 +9,15 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Support\Collection as SupportCollection;
 use Vaened\Searcher\Constraint;
-use Vaened\Searcher\Constraints\BetweenDates;
+use Vaened\Searcher\Constraints\Between;
 use Vaened\Searcher\Dates\DailyDate;
 
-class BetweenDatesTest extends ConstraintTestCase
+class BetweenTest extends ConstraintTestCase
 {
     protected function constraint(): Constraint
     {
         $dates = new DailyDate(Carbon::create(4001, 01, 01));
-        return new BetweenDates($dates, 'affiliated_at');
+        return new Between($dates, 'affiliated_at');
     }
 
     protected function getExpectedResult(): array

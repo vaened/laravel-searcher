@@ -7,8 +7,7 @@ namespace Vaened\Searcher;
 
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\{Builder, Collection};
-use Vaened\Searcher\Constraints\{BetweenDates, Equals, Has, In, IsNotNull, IsNull, Like, Limit, OrderBy};
-use Vaened\Searcher\Dates\BetweenDatesContract;
+use Vaened\Searcher\Constraints\{Between, Equals, Has, In, IsNotNull, IsNull, Like, Limit, OrderBy};
 
 abstract class Searcheable extends Queryable
 {
@@ -75,9 +74,9 @@ abstract class Searcheable extends Queryable
         $this->apply(new Like($value, $column, $wildcard));
     }
 
-    protected function between(BetweenDatesContract $dates, string $column): void
+    protected function between(Rangeable $range, string $column): void
     {
-        $this->apply(new BetweenDates($dates, $column));
+        $this->apply(new Between($range, $column));
     }
 
     protected function through(string $relation, Constraint $constraint): void
@@ -85,7 +84,7 @@ abstract class Searcheable extends Queryable
         $this->has($relation, $constraint);
     }
 
-    protected function has(string $relation, Constraint $constraint = null)
+    protected function has(string $relation, Constraint $constraint = null): void
     {
         $this->apply(new Has($relation, $constraint));
     }

@@ -7,22 +7,22 @@ namespace Vaened\Searcher\Constraints;
 
 use Illuminate\Database\Eloquent\Builder;
 use Vaened\Searcher\Constraint;
-use Vaened\Searcher\Dates\BetweenDatesContract;
+use Vaened\Searcher\Rangeable;
 
-class BetweenDates implements Constraint
+class Between implements Constraint
 {
-    private BetweenDatesContract $dates;
+    private Rangeable $range;
 
     private string $column;
 
-    public function __construct(BetweenDatesContract $dates, string $column)
+    public function __construct(Rangeable $range, string $column)
     {
-        $this->dates = $dates;
+        $this->range = $range;
         $this->column = $column;
     }
 
     public function condition(Builder $builder): Builder
     {
-        return $builder->whereBetween($this->column, $this->dates->getRange());
+        return $builder->whereBetween($this->column, $this->range->getRange());
     }
 }
