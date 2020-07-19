@@ -6,9 +6,9 @@
 namespace Vaened\Searcher\Tests\Utils;
 
 use Closure;
-use Vaened\Searcher\{Indexable, Wildcard};
+use Vaened\Searcher\{Indexable, Keywords\Operator, Wildcard};
 use Vaened\Searcher\ConstraintCollection;
-use Vaened\Searcher\Constraints\{Equals, Like};
+use Vaened\Searcher\Constraints\{Comparison, Like};
 
 class IndexProvider extends Indexable
 {
@@ -22,7 +22,7 @@ class IndexProvider extends Indexable
 
     protected function isEqualsToDocumentNumber(): Closure
     {
-        return fn(string $q) => new Equals($q, 'document');
+        return fn(string $q) => new Comparison($q, Operator::EQUAL(), 'document');
     }
 
     protected function isEqualsToName(): Closure

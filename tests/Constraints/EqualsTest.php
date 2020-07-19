@@ -6,13 +6,14 @@
 namespace Vaened\Searcher\Tests\Constraints;
 
 use Vaened\Searcher\Constraint;
-use Vaened\Searcher\Constraints\Equals;
+use Vaened\Searcher\Constraints\Comparison;
+use Vaened\Searcher\Keywords\Operator;
 
 class EqualsTest extends ConstraintTestCase
 {
     protected function constraint(): Constraint
     {
-        return new Equals('00000003', 'history');
+        return new Comparison('00000003', Operator::EQUAL(), 'history');
     }
 
     protected function getExpectedResult(): array

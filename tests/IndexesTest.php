@@ -6,7 +6,7 @@
 namespace Vaened\Searcher\Tests;
 
 use Closure;
-use Vaened\Searcher\Constraints\Equals;
+use Vaened\Searcher\Constraints\Comparison;
 use Vaened\Searcher\Constraints\Like;
 use Vaened\Searcher\Tests\Utils\Indexes;
 use Vaened\Searcher\Tests\Utils\IndexProvider;
@@ -21,7 +21,7 @@ class IndexesTest extends DataBaseTestCase
         $likeConstraint = $index->getConstraint(Indexes::NAME()->key(), '');
 
         $this->assertInstanceOf(Like::class, $likeConstraint);
-        $this->assertInstanceOf(Equals::class, $index->getConstraint(Indexes::DOCUMENT()->key(), ''));
+        $this->assertInstanceOf(Comparison::class, $index->getConstraint(Indexes::DOCUMENT()->key(), ''));
     }
 
     public function test_search_by_name(): void
