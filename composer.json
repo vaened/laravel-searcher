@@ -1,10 +1,17 @@
 {
   "name": "vaened/laravel-searcher",
+  "description": "Search engine builder for eloquent",
   "authors": [
     {
       "name": "enea dhack",
       "email": "enea.so@live.com"
     }
+  ],
+  "keywords": [
+    "searcher",
+    "filters",
+    "laravel-searcher",
+    "laravel-filter"
   ],
   "require": {
     "php": ">=7.4",
