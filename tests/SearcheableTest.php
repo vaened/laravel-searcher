@@ -8,7 +8,7 @@ namespace Vaened\Searcher\Tests;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Carbon;
 use Vaened\Searcher\Dates\FullDayDates;
-use Vaened\Searcher\OrderDirection;
+use Vaened\Searcher\Keywords\OrderDirection;
 use Vaened\Searcher\Tests\Utils\Models\Account;
 use Vaened\Searcher\Tests\Utils\Models\Patient;
 use Vaened\Searcher\Tests\Utils\OrderColumn;

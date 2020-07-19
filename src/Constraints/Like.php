@@ -7,7 +7,7 @@ namespace Vaened\Searcher\Constraints;
 
 use Illuminate\Database\Eloquent\Builder;
 use Vaened\Searcher\Constraint;
-use Vaened\Searcher\Wildcard;
+use Vaened\Searcher\Keywords\Wildcard;
 
 class Like implements Constraint
 {

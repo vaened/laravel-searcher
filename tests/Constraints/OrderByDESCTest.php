@@ -7,7 +7,7 @@ namespace Vaened\Searcher\Tests\Constraints;
 
 use Vaened\Searcher\Constraint;
 use Vaened\Searcher\Constraints\OrderBy;
-use Vaened\Searcher\OrderDirection;
+use Vaened\Searcher\Keywords\OrderDirection;
 
 class OrderByDESCTest extends ConstraintTestCase
 {

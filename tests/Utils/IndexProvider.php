@@ -6,9 +6,10 @@
 namespace Vaened\Searcher\Tests\Utils;
 
 use Closure;
-use Vaened\Searcher\{Indexable, Keywords\Operator, Wildcard};
+use Vaened\Searcher\{Indexable};
 use Vaened\Searcher\ConstraintCollection;
 use Vaened\Searcher\Constraints\{Comparison, Like};
+use Vaened\Searcher\Keywords\{Operator, Wildcard};
 
 class IndexProvider extends Indexable
 {

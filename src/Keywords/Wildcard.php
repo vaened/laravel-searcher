@@ -3,7 +3,7 @@
  * Created by enea dhack - 12/07/2020 19:29.
  */
 
-namespace Vaened\Searcher;
+namespace Vaened\Searcher\Keywords;
 
 use Vaened\Enum\Enum;
 

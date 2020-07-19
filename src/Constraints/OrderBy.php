@@ -7,7 +7,7 @@ namespace Vaened\Searcher\Constraints;
 
 use Illuminate\Database\Eloquent\Builder;
 use Vaened\Searcher\Constraint;
-use Vaened\Searcher\OrderDirection;
+use Vaened\Searcher\Keywords\OrderDirection;
 
 class OrderBy implements Constraint
 {

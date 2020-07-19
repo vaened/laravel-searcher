@@ -7,7 +7,7 @@ namespace Vaened\Searcher\Tests\Constraints;
 
 use Vaened\Searcher\Constraint;
 use Vaened\Searcher\Constraints\Like;
-use Vaened\Searcher\Wildcard;
+use Vaened\Searcher\Keywords\Wildcard;
 
 class LikeTest extends ConstraintTestCase
 {

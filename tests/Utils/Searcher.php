@@ -6,9 +6,10 @@
 namespace Vaened\Searcher\Tests\Utils;
 
 use Illuminate\Database\Eloquent\Builder;
-use Vaened\Searcher\{Filterable, Indexable, Searcheable, Wildcard};
+use Vaened\Searcher\{Filterable, Indexable, Searcheable};
 use Vaened\Searcher\{SoftDeletes, WithFilters, WithIndexes};
 use Vaened\Searcher\Dates\BetweenDatesContract;
+use Vaened\Searcher\Keywords\Wildcard;
 use Vaened\Searcher\Tests\Utils\Models\Patient;
 
 class Searcher extends Searcheable

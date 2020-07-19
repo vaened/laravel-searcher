@@ -10,7 +10,7 @@ use Vaened\Searcher\Constraints\Comparison;
 use Vaened\Searcher\Constraints\Like;
 use Vaened\Searcher\Constraints\Wrap;
 use Vaened\Searcher\Keywords\Operator;
-use Vaened\Searcher\Wildcard;
+use Vaened\Searcher\Keywords\Wildcard;
 
 class WrapTest extends ConstraintTestCase
 {

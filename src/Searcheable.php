@@ -8,7 +8,7 @@ namespace Vaened\Searcher;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\{Builder, Collection};
 use Vaened\Searcher\Constraints\{Between, Comparison, Has, In, IsNotNull, IsNull, Like, Limit, OrderBy};
-use Vaened\Searcher\Keywords\Operator;
+use Vaened\Searcher\Keywords\{Operator, OrderDirection, Wildcard};
 
 abstract class Searcheable extends Queryable
 {
