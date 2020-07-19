@@ -5,13 +5,9 @@
 
 namespace Vaened\Searcher\Tests;
 
-use Closure;
-use Vaened\Searcher\Constraints\Comparison;
-use Vaened\Searcher\Constraints\Like;
-use Vaened\Searcher\Tests\Utils\Indexes;
-use Vaened\Searcher\Tests\Utils\IndexProvider;
-use Vaened\Searcher\Tests\Utils\Models\Patient;
-use Vaened\Searcher\Tests\Utils\Searcher;
+use InvalidArgumentException;
+use Vaened\Searcher\Constraints\{Comparison, Like};
+use Vaened\Searcher\Tests\Utils\{Indexes, IndexProvider, Searcher};
 
 class IndexesTest extends DataBaseTestCase
 {
@@ -24,30 +20,29 @@ class IndexesTest extends DataBaseTestCase
         $this->assertInstanceOf(Comparison::class, $index->getConstraint(Indexes::DOCUMENT()->key(), ''));
     }
 
+    public function test_requesting_an_invalid_restriction_throws_an_exception(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage("The requested index was not found: non-existent");
+
+        $index = new IndexProvider();
+        $index->getConstraint('non-existent', '');
+    }
+
     public function test_search_by_name(): void
     {
         $results = $this->search(Indexes::NAME(), 'Hana')->get();
-        $names = $results->map($this->names())->toArray();
-
         $this->assertCount(2, $results);
-        $this->assertEquals(['Hanae', 'Hanako'], $names);
     }
 
     public function test_search_by_document(): void
     {
         $results = $this->search(Indexes::DOCUMENT(), '87654321')->get();
-
         $this->assertCount(1, $results);
-        $this->assertEquals('87654321', $results->first()->document);
     }
 
     private function search(Indexes $index, string $q): Searcher
     {
         return $this->searcher()->search($index->key(), $q);
-    }
-
-    protected function names(): Closure
-    {
-        return fn(Patient $patient): string => $patient->name;
     }
 }
