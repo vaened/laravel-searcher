@@ -14,16 +14,14 @@
     "laravel-filter"
   ],
   "require": {
-    "php": ">=7.4",
-    "illuminate/database": "^7.0",
-    "illuminate/support": "^7.0",
+    "php": "^7.4||^8.0",
+    "laravel/framework": "^7.0 || ^8.0",
     "vaened/php-enum": "^1.0",
     "ext-json": "*"
   },
   "require-dev": {
-    "phpunit/phpunit": "^8.5",
-    "orchestra/testbench": "^5",
-    "orchestra/database": "^5"
+    "phpunit/phpunit": "^8.5 || ^9.3.7",
+    "orchestra/testbench": "^5.4||^6.0"
   },
   "autoload": {
     "psr-4": {
