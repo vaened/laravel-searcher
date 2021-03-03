@@ -65,7 +65,7 @@ abstract class Searcheable extends Queryable
         $this->comparision($value, Operator::EQUAL(), $column);
     }
 
-    protected function notEquals(string $value, string $column)
+    protected function notEquals(string $value, string $column): void
     {
         $this->comparision($value, Operator::NOT_EQUAL(), $column);
     }

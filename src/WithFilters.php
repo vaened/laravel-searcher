@@ -5,8 +5,6 @@
 
 namespace Vaened\Searcher;
 
-use Vaened\Searcher\Filterable;
-
 trait WithFilters
 {
     abstract protected function getFilterProvider(): Filterable;

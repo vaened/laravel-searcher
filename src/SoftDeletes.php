@@ -5,7 +5,6 @@
 
 namespace Vaened\Searcher;
 
-use Vaened\Searcher\Binding;
 use Vaened\Searcher\Constraints\IsNotNull;
 use Vaened\Searcher\Constraints\IsNull;
 

@@ -5,8 +5,6 @@
 
 namespace Vaened\Searcher;
 
-use Vaened\Searcher\Indexable;
-
 trait WithIndexes
 {
     abstract protected function getIndexProvider(): Indexable;
@@ -19,5 +17,4 @@ trait WithIndexes
 
         return $this;
     }
-
 }
