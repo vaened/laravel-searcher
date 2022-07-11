@@ -5,18 +5,7 @@
 
 namespace Vaened\Searcher\Tests\Utils;
 
-
-use Vaened\Enum\Enum;
-
-/**
- * Class OrderColumn
- *
- * @package Tests\Unit\Components\Searcher\Utils
- * @author enea dhack <enea.so@live.com>
- *
- * @method static OrderColumn AFFILIATED()
- */
-class OrderColumn extends Enum
+enum OrderColumn: string
 {
-    public const AFFILIATED = 'affiliated_at';
+    case AFFILIATED = 'affiliated_at';
 }

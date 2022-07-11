@@ -17,8 +17,8 @@ class WrapTest extends ConstraintTestCase
     protected function constraint(): Constraint
     {
         return new Wrap([
-            new Like('repeated obs', 'observation', Wildcard::RIGHT()),
-            new Comparison('Aiko', Operator::EQUAL(), 'name'),
+            new Like('repeated obs', 'observation', Wildcard::RIGHT),
+            new Comparison('Aiko', Operator::EQUAL, 'name'),
         ]);
     }
 

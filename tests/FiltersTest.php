@@ -16,7 +16,7 @@ class FiltersTest extends DataBaseTestCase
     public function test_filter_provider(): void
     {
         $filter = new FilterProvider();
-        $filters = $filter->getConstraints([Filter::WITH_ACCOUNT()->key(), Filter::OBSERVED()->key()]);
+        $filters = $filter->getConstraints([Filter::WITH_ACCOUNT, Filter::OBSERVED]);
 
         $this->assertInstanceOf(IsNotNull::class, $filters['OBSERVED']);
         $this->assertInstanceOf(Has::class, $filters['WITH_ACCOUNT']);
@@ -24,13 +24,13 @@ class FiltersTest extends DataBaseTestCase
 
     public function test_filter_only_with_account_patients(): void
     {
-        $results = $this->searcher()->filter([Filter::WITH_ACCOUNT()->key()])->get();
+        $results = $this->searcher()->filter([Filter::WITH_ACCOUNT])->get();
         $this->assertCount(1, $results);
     }
 
     public function test_filter_only_observed_patients(): void
     {
-        $results = $this->searcher()->filter([Filter::OBSERVED()->key()])->get();
+        $results = $this->searcher()->filter([Filter::OBSERVED])->get();
         $this->assertCount(3, $results);
         $this->assertCount(0, $results->filter(fn(Patient $patient) => $patient->observation == null));
     }

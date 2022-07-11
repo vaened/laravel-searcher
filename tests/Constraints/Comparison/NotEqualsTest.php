@@ -14,7 +14,7 @@ class NotEqualsTest extends ConstraintTestCase
 {
     protected function constraint(): Constraint
     {
-        return new Comparison('00000003', Operator::NOT_EQUAL(), 'history');
+        return new Comparison('00000003', Operator::NOT_EQUAL, 'history');
     }
 
     protected function getExpectedResult(): array

@@ -5,20 +5,9 @@
 
 namespace Vaened\Searcher\Tests\Utils;
 
-use Vaened\Enum\Enum;
-
-/**
- * Class Indexes
- *
- * @package Tests\Unit\Components\Searcher\Utils
- * @author enea dhack <enea.so@live.com>
- *
- * @method static Filter OBSERVED()
- * @method static Filter WITH_ACCOUNT()
- */
-class Filter extends Enum
+enum Filter: string
 {
-    public const OBSERVED = 'Observed';
+    case OBSERVED = 'Observed';
 
-    public const WITH_ACCOUNT = 'Only with account';
+    case WITH_ACCOUNT = 'Only with account';
 }

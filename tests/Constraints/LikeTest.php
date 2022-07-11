@@ -13,7 +13,7 @@ class LikeTest extends ConstraintTestCase
 {
     protected function constraint(): Constraint
     {
-        return new Like('repeated obs', 'observation', Wildcard::RIGHT());
+        return new Like('repeated obs', 'observation', Wildcard::RIGHT);
     }
 
     protected function getExpectedResult(): array

@@ -34,7 +34,7 @@ class Searcher extends Searcheable
 
     public function observationLikeTo(string $q): self
     {
-        $this->like($q, 'observation', Wildcard::RIGHT());
+        $this->like($q, 'observation', Wildcard::RIGHT);
         return $this;
     }
 

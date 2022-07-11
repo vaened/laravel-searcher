@@ -16,8 +16,8 @@ class FilterProvider extends Filterable
     protected function getAvailableConstraints(): ConstraintCollection
     {
         $collection = ConstraintCollection::create();
-        $collection->put(Filter::OBSERVED()->key(), $this->onlyObserved());
-        $collection->put(Filter::WITH_ACCOUNT()->key(), $this->onlyWithAccount());
+        $collection->put(Filter::OBSERVED, $this->onlyObserved());
+        $collection->put(Filter::WITH_ACCOUNT, $this->onlyWithAccount());
         return $collection;
     }
 

@@ -14,7 +14,7 @@ class GreaterThanTest extends ConstraintTestCase
 {
     protected function constraint(): Constraint
     {
-        return new Comparison('00000003', Operator::GREATER_THAN(), 'history');
+        return new Comparison('00000003', Operator::GREATER_THAN, 'history');
     }
 
     protected function getExpectedResult(): array

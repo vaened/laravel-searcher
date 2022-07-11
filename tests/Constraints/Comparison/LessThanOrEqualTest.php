@@ -14,7 +14,7 @@ class LessThanOrEqualTest extends ConstraintTestCase
 {
     protected function constraint(): Constraint
     {
-        return new Comparison('00000002', Operator::LESS_THAN_OR_EQUAL_TO(), 'history');
+        return new Comparison('00000002', Operator::LESS_THAN_OR_EQUAL_TO, 'history');
     }
 
     protected function getExpectedResult(): array
