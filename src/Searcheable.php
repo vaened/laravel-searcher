@@ -62,12 +62,12 @@ abstract class Searcheable extends Queryable
 
     protected function equals(string $value, string $column): void
     {
-        $this->comparision($value, Operator::EQUAL(), $column);
+        $this->comparision($value, Operator::EQUAL, $column);
     }
 
     protected function notEquals(string $value, string $column): void
     {
-        $this->comparision($value, Operator::NOT_EQUAL(), $column);
+        $this->comparision($value, Operator::NOT_EQUAL, $column);
     }
 
     protected function isNotNull(string $column): void
