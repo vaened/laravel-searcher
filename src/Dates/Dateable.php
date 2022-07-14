@@ -27,7 +27,7 @@ abstract class Dateable implements BetweenDatesContract
 
     protected function getDateFormat(): Format
     {
-        return Format::YMD_HIS;
+        return Format::YMD_HIS();
     }
 
     public function toArray()

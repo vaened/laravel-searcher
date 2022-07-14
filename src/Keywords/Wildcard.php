@@ -5,17 +5,29 @@
 
 namespace Vaened\Searcher\Keywords;
 
-enum Wildcard: string
+use Vaened\Enum\Enum;
+
+/**
+ * Class Wildcard
+ *
+ * @package Vaened\Searcher
+ * @author enea dhack <enea.so@live.com>
+ *
+ * @method static Wildcard LEFT()
+ * @method static Wildcard RIGHT()
+ * @method static Wildcard BOTH()
+ */
+final class Wildcard extends Enum
 {
-    case  LEFT = '%%%s';
+    public const LEFT = '%%%s';
 
-    case  RIGHT = '%s%%';
+    public const RIGHT = '%s%%';
 
-    case  BOTH = '%%%s%%';
+    public const BOTH = '%%%s%%';
 
     public function apply(string $q): string
     {
-        return sprintf($this->value, $q);
+        return sprintf($this->value(), $q);
     }
 }
 

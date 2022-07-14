@@ -8,7 +8,6 @@ namespace Vaened\Searcher\Constraints;
 use Illuminate\Database\Eloquent\Builder;
 use Vaened\Searcher\Constraint;
 use Vaened\Searcher\Keywords\OrderDirection;
-use function dd;
 
 class OrderBy implements Constraint
 {
@@ -24,6 +23,6 @@ class OrderBy implements Constraint
 
     public function condition(Builder $builder): Builder
     {
-        return $builder->orderBy($this->column, $this->direction?->value ?: OrderDirection::DESC->value);
+        return $builder->orderBy($this->column, $this->direction ?: OrderDirection::DESC);
     }
 }

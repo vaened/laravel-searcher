@@ -5,16 +5,14 @@
 
 namespace Vaened\Searcher;
 
-use UnitEnum;
-
 trait WithIndexes
 {
     abstract protected function getIndexProvider(): Indexable;
 
-    public function search(UnitEnum $enum, ?string $q): self
+    public function search(string $index, ?string $q): self
     {
-        if ($q !== null) {
-            $this->apply($this->getIndexProvider()->getConstraint($enum, $q));
+        if ($q != null) {
+            $this->apply($this->getIndexProvider()->getConstraint($index, $q));
         }
 
         return $this;

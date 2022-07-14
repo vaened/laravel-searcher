@@ -7,7 +7,6 @@ namespace Vaened\Searcher;
 
 use Closure;
 use InvalidArgumentException;
-use UnitEnum;
 
 final class ConstraintCollection
 {
@@ -18,9 +17,9 @@ final class ConstraintCollection
         return new static();
     }
 
-    public function put(UnitEnum $unit, Closure $constraint): void
+    public function put(string $key, Closure $constraint): void
     {
-        $this->add($unit->name, $constraint);
+        $this->add($key, $constraint);
     }
 
     private function add(string $key, Closure $constraint): void

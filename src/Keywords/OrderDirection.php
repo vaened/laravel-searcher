@@ -5,9 +5,20 @@
 
 namespace Vaened\Searcher\Keywords;
 
-enum OrderDirection: string
-{
-    case ASC = 'asc';
+use Vaened\Enum\Enum;
 
-    case DESC = 'desc';
+/**
+ * Class OrderDirection
+ *
+ * @package Vaened\Searcher
+ * @author enea dhack <enea.so@live.com>
+ *
+ * @method static OrderDirection ASC()
+ * @method static OrderDirection DESC()
+ */
+final class OrderDirection extends Enum
+{
+    public const ASC = 'asc';
+
+    public const DESC = 'desc';
 }

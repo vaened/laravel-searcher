@@ -22,7 +22,7 @@ class Has implements Constraint
 
     public function condition(Builder $builder): Builder
     {
-        if ($this->constraint === null) {
+        if ($this->constraint == null) {
             return $builder->whereHas($this->relationship);
         }
 

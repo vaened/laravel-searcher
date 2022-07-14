@@ -26,7 +26,7 @@ class Like implements Constraint
 
     public function condition(Builder $builder): Builder
     {
-        $wildcard = $this->wildcard ?: Wildcard::RIGHT;
+        $wildcard = $this->wildcard ?: Wildcard::RIGHT();
         return $builder->where($this->column, 'LIKE', $wildcard->apply($this->value));
     }
 }
