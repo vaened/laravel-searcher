@@ -5,9 +5,20 @@
 
 namespace Vaened\Searcher\Tests\Utils;
 
-enum Filter: string
-{
-    case OBSERVED = 'Observed';
+use Vaened\Enum\Enum;
 
-    case WITH_ACCOUNT = 'Only with account';
+/**
+ * Class Indexes
+ *
+ * @package Tests\Unit\Components\Searcher\Utils
+ * @author enea dhack <enea.so@live.com>
+ *
+ * @method static Filter OBSERVED()
+ * @method static Filter WITH_ACCOUNT()
+ */
+class Filter extends Enum
+{
+    public const OBSERVED = 'Observed';
+
+    public const WITH_ACCOUNT = 'Only with account';
 }

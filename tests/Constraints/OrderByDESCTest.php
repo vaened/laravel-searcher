@@ -13,7 +13,7 @@ class OrderByDESCTest extends ConstraintTestCase
 {
     protected function constraint(): Constraint
     {
-        return new OrderBy('history', OrderDirection::DESC);
+        return new OrderBy('history', OrderDirection::DESC());
     }
 
     protected function getExpectedResult(): array

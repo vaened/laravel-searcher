@@ -48,7 +48,7 @@ class SearcheableTest extends DataBaseTestCase
 
     public function test_sort_descending_by_column(): void
     {
-        $results = $this->searcher()->orderBy(OrderColumn::AFFILIATED->value, OrderDirection::DESC)->get();
+        $results = $this->searcher()->orderBy(OrderColumn::AFFILIATED(), OrderDirection::DESC())->get();
         $this->assertCount(3, $results);
     }
 

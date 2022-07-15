@@ -5,9 +5,20 @@
 
 namespace Vaened\Searcher\Tests\Utils;
 
-enum Indexes: string
-{
-    case DOCUMENT = 'Identification Document';
+use Vaened\Enum\Enum;
 
-    case NAME = 'Full Name';
+/**
+ * Class Indexes
+ *
+ * @package Tests\Unit\Components\Searcher\Utils
+ * @author enea dhack <enea.so@live.com>
+ *
+ * @method static Indexes DOCUMENT()
+ * @method static Indexes NAME()
+ */
+class Indexes extends Enum
+{
+    public const DOCUMENT = 'Identification Document';
+
+    public const NAME = 'Full Name';
 }

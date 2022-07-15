@@ -14,7 +14,7 @@ class EqualsTest extends ConstraintTestCase
 {
     protected function constraint(): Constraint
     {
-        return new Comparison('00000003', Operator::EQUAL, 'history');
+        return new Comparison('00000003', Operator::EQUAL(), 'history');
     }
 
     protected function getExpectedResult(): array

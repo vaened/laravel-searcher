@@ -13,7 +13,7 @@ class OrderByASCTest extends ConstraintTestCase
 {
     protected function constraint(): Constraint
     {
-        return new OrderBy('history', OrderDirection::ASC);
+        return new OrderBy('history', OrderDirection::ASC());
     }
 
     protected function getExpectedResult(): array
