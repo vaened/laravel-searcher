@@ -16,7 +16,8 @@
   "require": {
     "php": "^8.1",
     "laravel/framework": "^8.0||^9.0",
-    "ext-json": "*"
+    "ext-json": "*",
+    "vaened/php-enum": "^2.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.3.7",
